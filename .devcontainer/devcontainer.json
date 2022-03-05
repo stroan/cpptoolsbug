@@ -1,0 +1,17 @@
+{
+    "name": "CppDevDemo",
+    "build": {
+        "dockerfile": "dev.dockerfile"
+    },
+    "remoteUser": "root",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/opt/workspace,type=bind,consistency=cached",
+    "workspaceFolder": "/opt/workspace",
+    "postAttachCommand": "make -f .devcontainer/Makefile postattach",
+    "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools"
+    ],
+    "settings": {
+        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
+    }
+}
